@@ -1,7 +1,5 @@
 Autonomous Delivery Agent
-It is a simulation project where an autonomous agent (a virtual robot) navigates a 2D "grid city." The city is mapped out like a chessboard, filled with open roads and obstacles (buildings, traffic jams, or construction zones).
-
-The goal of the agent is simple: Pick up a package at Point A and deliver it to Point B using the most efficient route possible, without crashing into obstacles.
+The goal of the agent is to quantitatively assess the performance (path cost, execution time, nodes expanded) of BFS, UCS, and A* across various map sizes and complexities. Show how an agent can adapt and re-plan its path in real-time when faced with moving obstacles.
 
 This project demonstrates the basics of:
 
