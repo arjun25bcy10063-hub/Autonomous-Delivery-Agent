@@ -5,7 +5,7 @@ This project demonstrates the basics of:
 
 Pathfinding: How robots figure out where to go.
 
-State Management: How the robot knows if it is carrying a package or is empty.
+State Management: How robots figure out where to go, along with the most cost effective path.
 
 Environment Interaction: Moving within a defined space.
 
