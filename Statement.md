@@ -1,23 +1,17 @@
-1. Problem Statement
-Traditional delivery is expensive, slow, and relies heavily on human labor. Traffic congestion and high costs make "last-mile" delivery inefficient. Additionally, there is a growing need for contactless options to ensure safety and hygiene.
+Problem Statement:-
+The delivery agents are not able to find the most cost efficient and time saving way to reach a particular destination.
 
-2. Scope of the Project
-We are building a self-driving robot designed to carry small packages on sidewalks and within gated communities.
+Scope of the Project:-
+he project's scope is to demonstrate and compare various pathfinding algorithms (BFS, UCS, A*) in environments with both static and moving obstacles, highlighting how an agent can dynamically replan its route to reach a goal.
 
-Includes: Building the robot hardware, navigation software, and a mobile app for users.
+Target Users:-
+   1. Students
+   2. Office workers
+   3. Residents ordering food, groceries, or documents
 
-Excludes: Driving on main roads/highways or carrying heavy industrial loads.
-
-3. Target Users
-End Users: Students, office workers, and residents ordering food, groceries, or documents.
-
-Businesses: Local restaurants and shops looking for a cheaper, automated way to deliver goods.
-
-4. High-Level Features
-Autonomous Navigation: The robot drives itself, detects obstacles, and safely navigates around pedestrians.
-
-Secure Storage: The cargo bay stays locked and only opens when the recipient scans a code on their phone.
-
-Real-Time Tracking: Users can track the robot's location live on a map.
-
-Auto-Return: The robot automatically returns to its station to recharge when the delivery is done.
+High-Level Features:-
+   1.Builds a grid world: Creates a virtual map with different areas and obstacles.
+   2.Adds moving obstacles: Includes enemies or moving blocks that change position.
+   3.Finds paths: Uses different smart methods (BFS, UCS, A*) to navigate the agent.
+   4.Reacts to changes: The agent can quickly find a new path if its way gets blocked by a moving obstacle.
+   5.Compares methods: It tests and shows which pathfinding method works best in different situations.
