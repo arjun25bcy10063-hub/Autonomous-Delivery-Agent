@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-# Removed: from agent_pathfinding_env import GridCell, DynamicObstacle, Agent, Node, Grid, SimulationController, reconstruct_path, manhattan_distance_heuristic, euclidean_distance_heuristic, chebyshev_distance_heuristic, bfs_search, ucs_search, astar_search, generate_map_string, run_experiment, conduct_full_experiment
 
 # --- Setup Maps ---
 print("--- Setting Up Maps ---")
@@ -30,10 +29,9 @@ S.X
 dynamic_grid = Grid.from_map_string(dynamic_replan_map_string)
 if dynamic_grid.dynamic_obstacles:
     do = dynamic_grid.dynamic_obstacles[0]
-    do.movement_pattern = [(-1,0)] # Move left once from (1,1) to (0,1)
+    do.movement_pattern = [(-1,0)] 
 print(f"\nDynamic Replanning Demo Map:\n{dynamic_replan_map_string}")
 
-# --- Run Full Experiment ---
 
 map_configs = [
     {
@@ -72,14 +70,13 @@ results_df = conduct_full_experiment(map_configs, algorithms)
 print("\n--- Experiment Results ---")
 print(results_df.to_markdown(index=False))
 
-# --- Visualization of Results ---
 
 plt.figure(figsize=(12, 6))
 sns.barplot(data=results_df, x='map_name', y='execution_time_ms', hue='algorithm', palette='viridis')
 plt.title('Algorithm Execution Time (ms) by Map Type')
 plt.xlabel('Map Type')
 plt.ylabel('Execution Time (ms)')
-plt.yscale('log') # Use log scale for better visualization of differences if values vary widely
+plt.yscale('log')
 plt.legend(title='Algorithm')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
@@ -90,20 +87,20 @@ sns.barplot(data=results_df, x='map_name', y='nodes_expanded', hue='algorithm', 
 plt.title('Nodes Expanded by Algorithm and Map Type')
 plt.xlabel('Map Type')
 plt.ylabel('Nodes Expanded')
-plt.yscale('log') # Use log scale for better visualization of differences if values vary widely
+plt.yscale('log')
 plt.legend(title='Algorithm')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
 
-# --- Dynamic Replanning Proof-of-Concept Run ---
+
 print("\n--- Running Dynamic Replanning Simulation (Proof-of-Concept) ---")
 
-# Re-initialize for the demo to ensure clean state
+
 grid_replan_demo = Grid.from_map_string(dynamic_replan_map_string)
 if grid_replan_demo.dynamic_obstacles:
     do_demo = grid_replan_demo.dynamic_obstacles[0]
-    do_demo.movement_pattern = [(-1,0)] # Move left once from (1,1) to (0,1)
+    do_demo.movement_pattern = [(-1,0)]
 
 agent_replan_demo = Agent(grid_replan_demo.start_pos)
 sim_controller_replan_demo = SimulationController(grid_replan_demo, agent_replan_demo, astar_search, manhattan_distance_heuristic)
